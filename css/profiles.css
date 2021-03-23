@@ -1,0 +1,102 @@
+.profile-page .container-fluid {
+    padding-top: 2.7rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, .8);
+    padding-bottom: 3rem;
+}
+
+.profile-titles {
+    max-width: 28rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.2rem;
+    text-align: center;
+}
+
+@media(min-width: 400px) {
+    .profile-titles {
+        margin-top: 2rem;
+    }
+}
+
+.profile-page .card-title,
+.card-title {
+    margin-top: 2rem;
+    font-weight: normal;
+    line-height: .8;
+    font-size: 1.9rem;
+    margin-bottom: .2rem;
+    letter-spacing: .05rem;
+}
+
+@media(min-width: 600px) {
+    .profile-page .card-title,
+    .card-title {
+        font-size: 2.2rem;
+    }
+}
+
+@media(min-width: 800px) {
+    .profile-page .card-title,
+    .card-title {
+        font-size: 2.4rem;
+    }
+}
+
+.profile-page .card-sub-title,
+.card-sub-title {
+    font-weight: normal;
+    font-size: 1.3rem;
+}
+
+.profile-page .card-sub-title {
+    line-height: 1.3;
+}
+
+
+/* @media(min-width: 600px) {
+    .profile-page .card-sub-title,
+    .card-sub-title {
+        font-size: 1.7rem;
+    }
+} */
+
+.profile-sec-1 {
+    padding: .2rem 1rem;
+}
+
+.profile-sec-1 p {
+    text-align: left;
+    font-weight: normal;
+    line-height: 1.3;
+    font-size: 1rem;
+    letter-spacing: .03rem;
+    margin-bottom: 1rem;
+}
+
+.profile-sec-1 .profile-img {
+    border: solid 2px #fff;
+    margin-bottom: .5rem;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+@media(min-width: 400px) {
+    .profile-sec-1 .profile-img {
+        border: solid 5px #fff;
+    }
+}
+
+@media(min-width: 600px) {
+    .profile-sec-1 .profile-img {
+        border: solid 8px #fff;
+    }
+}
+
+.profile-sec-1 .profile-img-copy {
+    text-align: left;
+    font-weight: normal;
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: .06rem;
+}

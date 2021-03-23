@@ -1,0 +1,199 @@
+.section-2 .card {
+    text-align: center;
+    background-color: transparent !important;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    max-width: 291px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block !important;
+    overflow: hidden;
+    border: none;
+    /* padding-top: 0; */
+}
+
+@media(min-width: 340px) {
+    .section-2 .card {
+        max-width: 145px;
+    }
+}
+
+@media(min-width: 400px) {
+    .section-2 .card {
+        max-width: 180px;
+    }
+}
+
+@media(min-width: 900px) {
+    .section-2 .card {
+        max-width: 291px;
+    }
+}
+
+.section-2 .third-card {
+    display: none !important;
+}
+
+@media(min-width: 600px) {
+    .section-2 .third-card {
+        display: block !important;
+    }
+}
+
+.sec-header {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.3rem;
+}
+
+.section-2 .card-title {
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 0;
+    line-height: 1.1;
+}
+
+
+/* @media(min-width: 500px) {
+    .section-2 .card-title {
+        font-size: 2rem;
+    }
+} */
+
+@media(min-width: 500px) {
+    .sec-header .sec-header-item-1 {
+        /* font-size: 1.5rem; */
+    }
+}
+
+.sec-header .sec-header-item-1 {
+    font-size: 1.8rem !important;
+    margin-bottom: .1rem !important;
+}
+
+.card-sub-title,
+.sec-header .sec-header-item-2 {
+    color: #929d78;
+    width: 100%;
+    font-weight: normal;
+    font-size: 1.2rem;
+    padding-left: 2rem;
+}
+
+.card-img-top {
+    max-width: 110px;
+    display: inline-block;
+    border: solid 5px #fff;
+    -moz-box-shadow: 1px 1px 4px #000;
+    /* -webkit-box-shadow: 1px 1px 4px #000; */
+    /* box-shadow: 1px 1px 4px #000; */
+    margin-right: auto;
+    margin-top: .5rem;
+    vertical-align: top;
+}
+
+.card-body {
+    color: white;
+    max-width: 10rem;
+    padding: .3rem .5rem .2rem .5rem !important;
+    display: inline-block;
+}
+
+.card-text {
+    line-height: 1.1;
+    letter-spacing: .03rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.section-2 .card .btn-primary {
+    background-color: rgb(160, 181, 134);
+    background-color: rgb(155, 177, 118);
+    color: rgb(0, 0, 0) !important;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.section-2 .card .btn-primary:hover {
+    background-color: rgb(0, 0, 0) !important;
+    color: rgb(255, 255, 255) !important;
+    border: none !important;
+    outline: none !important;
+}
+
+.section-2 .card .btn-primary:focus {
+    outline: none !important;
+    border: none !important;
+}
+
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary:hover,
+a:active,
+a:focus,
+a:link,
+a:hover,
+a {
+    outline: none !important;
+    border: none !important;
+}
+
+.profile-page .btn-primary-l,
+.large-button-sec .btn-primary-l,
+.accordion .btn.collapsed,
+.accordion .btn {
+    color: rgb(0, 0, 0) !important;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    padding: .8rem 2rem !important;
+    cursor: pointer;
+    border: none;
+    font-size: 1.1rem;
+    width: 100%;
+    margin-top: 2rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+}
+
+.profile-page .btn-primary-l,
+.large-button-sec .btn-primary-l,
+.accordion .btn.collapsed,
+.accordion .btn-primary {
+    background-color: rgb(160, 181, 134);
+    background-color: rgb(155, 177, 118);
+}
+
+.profile-page .btn-primary-l,
+.large-button-sec .btn-primary-l {
+    max-width: 18rem;
+    border-radius: .25rem;
+}
+
+.profile-page .btn-primary-l:active,
+.btn-primary-l:active,
+.profile-page .btn-primary-l:link,
+.large-button-sec .btn-primary-l:link,
+.modal .large-button-sec .btn-primary-l:link {
+    color: rgb(0, 0, 0) !important;
+}
+
+.profile-page .btn-primary-l:hover,
+.large-button-sec .btn-primary-l:hover,
+.accordion .modal-accordion-body .btn-primary:hover {
+    background-color: rgb(0, 0, 0) !important;
+    color: rgb(255, 255, 255) !important;
+    border: none !important;
+    outline: none !important;
+}
+
+.section-2 .card .btn-primary {
+    background-color: rgb(160, 181, 134);
+    background-color: rgb(155, 177, 118);
+    color: rgb(0, 0, 0) !important;
+    padding: .3rem 1rem .4rem 1rem;
+    width: 100%;
+    font-size: 1.1rem;
+}

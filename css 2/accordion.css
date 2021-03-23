@@ -1,0 +1,79 @@
+.accordion {
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.accordion .card {
+    background-color: transparent;
+}
+
+.accordion .card-header {
+    cursor: pointer;
+}
+
+.accordion .btn {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+.accordion .btn.collapsed {
+    border-radius: 5px;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+.accordion .btn .accordion-item-1 {
+    padding-top: .8rem;
+    float: left;
+    font-size: 1rem;
+}
+
+.accordion .btn .accordion-item-2 {
+    font-size: 2rem;
+}
+
+.accordion .btn .accordion-item-3 {
+    float: right;
+}
+
+.accordion .card-body {
+    color: white;
+    max-width: 100%;
+    padding: 1rem .5rem .2rem .5rem !important;
+    border: 1px solid gray;
+    border-width: 0 1px 1px 1px;
+}
+
+.accordion .card-body p {
+    font-size: 1.3rem;
+    font-family: 'open_sans', sans-serif;
+    font-weight: 100;
+}
+
+.accordion .card-body strong {
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.accordion .btn:hover {
+    background-color: rgb(255, 255, 255);
+    border: none;
+    outline: none;
+}
+
+.accordion .modal-accordion-body .btn-primary {
+    background-color: rgb(155, 177, 118);
+    border-radius: 5px;
+    max-width: 8rem;
+    color: rgb(0, 0, 0) !important;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    padding: .5rem 1rem !important;
+    margin-bottom: 1rem;
+    display: block;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
