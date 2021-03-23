@@ -6,9 +6,6 @@
 <link href="css/reset.css" rel="stylesheet" type="text/css" />
 <link href="css/layout.css" rel="stylesheet" type="text/css" />
 <link href="css/style.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-
 <!--[if lt IE 7]>
      <script type="text/javascript" src="js/ie_png.js"></script>
      <script type="text/javascript">
@@ -204,11 +201,38 @@
               <div class="inner-1">
                 <article class="wrapper">
                   <div class="col-1">
-                    <h2><strong>Gracias<span>por contactarnos</span></strong></h2>
-                          <div class="contact-thanks">
-                                <p>Name, Tus sugerencias y comentarios, son muy importantes para nosotros.</p>
+                    <h2><strong>Cont&#225;ctenos<span>Llene la informacion</span></strong></h2>
+                    <form id="contact-form" action="sendeail.php" method='post'>
+                      <div class="wrapper">
+							<!-- DO NOT change ANY of the php sections -->
+							<?php
+							$ipi = getenv("REMOTE_ADDR");
+							$httprefi = getenv ("HTTP_REFERER");
+							$httpagenti = getenv ("HTTP_USER_AGENT");
+							?>
 
-                          </div>
+							<input type="hidden" name="ip" value="<?php echo $ipi ?>" />
+							<input type="hidden" name="httpref" value="<?php echo $httprefi ?>" />
+							<input type="hidden" name="httpagent" value="<?php echo $httpagenti ?>" />
+
+                       <label>
+                          <input type="text" name="visitor" value="enter your name" onBlur="if(this.value=='') this.value='enter your name'" onFocus="if(this.value =='enter your name' ) this.value=''" />
+
+                        </label>
+                        <div class="error_msg"><?php echo $error['name']?></div>
+                        <label>
+                          <input type="email"  name='visitormail' value="enter e-mail" onBlur="if(this.value=='') this.value='enter e-mail'" onFocus="if(this.value =='enter e-mail' ) this.value=''" />
+                        </label>
+                        <div class="error_msg"><?php echo $error['email']?></div>
+                        <strong>
+                        <textarea cols="1" rows="1" name="notes" onBlur="if(this.value=='') this.value='enter message'" onFocus="if(this.value =='enter message' ) this.value=''" >enter message</textarea>
+
+                        </strong>
+                        <div class="error_msg"><?php echo $error['message']?></div>
+                        <input type='submit' />
+                        <a  href="#" onClick="document.getElementById('contact-form').submit()">Submit</a> <a href="#" onClick="document.getElementById('contact-form').reset()">Reset</a> </div>
+                    </form>
+
                   </div>
                   <div class="col-2">
                     <div class="wrapper">

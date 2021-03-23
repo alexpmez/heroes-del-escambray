@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title></title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=0.3">
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/layout.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/accordion.css" rel="stylesheet" type="text/css" />
+
+           <!-- load jQuery -->
+           <script src="js/jquery.1.7.1.js"></script>
+
+           <!-- load Galleria -->
+        <script src="galleria/galleria-1.2.6.min.js"></script>
+<!--[if lt IE 7]>
+     <script type="text/javascript" src="js/ie_png.js"></script>
+     <script type="text/javascript">
+     ie_png.fix('.png, #main-tail-top, #main-tail-bot, nav ul li a, #search-form label, #faded strong, #faded a.next, #faded a.prev, #faded div, #faded div span a, .box, .privacy');
+     </script>
+     <link href="css/ie/ie6.css" rel="stylesheet" type="text/css" />
+   <![endif]-->
+<!--[if IE]>
+      <script type="text/javascript" src="js/html5.js"></script>
+   <![endif]-->
+
+	<!-- Add mousewheel plugin (this is optional) -->
+	<script type="text/javascript" src="lib/jquery.mousewheel-3.0.6.pack.js"></script>
+
+	<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="source/jquery.fancybox.js"></script>
+	<link rel="stylesheet" type="text/css" href="source/jquery.fancybox.css" media="screen" />
+
+	<!-- Add Button helper (this is optional) -->
+	<link rel="stylesheet" type="text/css" href="source/helpers/jquery.fancybox-buttons.css?v=2.0.3" />
+	<script type="text/javascript" src="source/helpers/jquery.fancybox-buttons.js?v=2.0.3"></script>
+
+	<!-- Add Thumbnail helper (this is optional) -->
+	<link rel="stylesheet" type="text/css" href="source/helpers/jquery.fancybox-thumbs.css?v=2.0.3" />
+	<script type="text/javascript" src="source/helpers/jquery.fancybox-thumbs.js?v=2.0.3"></script>
+
+	<script type="text/javascript" src="/fancybox/jquery.easing-1.4.pack.js"></script>
+
+	<!-- Accordion Menu -->
+	<script src="lib/jquery-1.8.ui.min.js"></script>
+
+
+<script type="text/javascript">
+/*  ==========  START Multimedia Sliders ============== */
+$(document).ready(function(){
+
+	$(".btn-slide1").click(function(){
+		if(!$('#panel1').is(':visible')) {
+			$('.panel').slideUp('slow');
+		}
+		$("#panel1").slideToggle("slow");
+		$(this).toggleClass("active1");
+	});
+
+
+	$(".btn-slide2").click(function(){
+		if(!$('#panel2').is(':visible')) {
+			$('.panel').slideUp('slow');
+		}
+		$("#panel2").slideToggle("slow");
+		$(this).toggleClass("active2");
+	});
+
+
+	$(".btn-slide3").click(function(){
+		if(!$('#panel3').is(':visible')) {
+			$('.panel').slideUp('slow');
+		}
+		$("#panel3").slideToggle("slow");
+		$(this).toggleClass("active3"); return false;
+	});
+
+
+	$(".btn-slide4").click(function(){
+		if(!$('#panel4').is(':visible')) {
+			$('.panel').slideUp('slow');
+		}
+		$("#panel4").slideToggle("slow");
+		$(this).toggleClass("active4"); return false;
+	});
+
+/*
+			$("#accordion").accordion({
+				autoHeight: false,
+				collapsible: true,
+				create: function(event, ui) {
+					$('.expand_but:first').hide();
+				}
+			});
+
+
+			$('#accordion').bind('accordionchangestart', function(event, ui) {
+			  ui.newHeader.children('a').children('span').hide();
+			  if(typeof ui.oldHeader != 'undefined') {
+			  	ui.oldHeader.children('a').children('span').show();
+			  }
+       });*/
+
+
+       			$("#accordion").accordion(
+	   				{
+	   				autoHeight: false,
+	   				active: false,
+	   				collapsible: true
+
+	   				}
+	   			);
+
+	   			$('#accordion').bind('accordionchangestart', function(event, ui) {
+	   			  ui.newHeader.children('a').children('span').hide();
+	   			  if(typeof ui.oldHeader != 'undefined') {
+	   			  	ui.oldHeader.children('a').children('span').show();
+	   			  }
+       });
+
+
+
+});
+/*  ==========  END Multimedia Sliders ============== */
+
+
+
+/*  ==========  START Fancy Box ============== */
+		$(document).ready(function() {
+			/*
+				Simple image gallery. Use default settings
+			*/
+
+			$('.fancybox').fancybox();
+
+			/*
+				Different effects
+			*/
+
+			// Change title type, overlay opening speed and opacity
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedIn : 500,
+						opacity : 0.95
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background-color' : '#000'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+				Button helper. Disable animations, hide close button, change title type and content
+			*/
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+				Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			*/
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+		});
+/*  ==========  Maps iframe Fancy Box START ============== */
+	$(document).ready(function() {
+		$(".maps").fancybox({
+			maxWidth	: 910,
+			maxHeight	: 600,
+			fitToView	: false,
+			width		: '100%',
+			height		: '100%',
+			autoSize	: true,
+			closeClick	: false,
+			openEffect	: 'elastic',
+			closeEffect	: 'elastic'
+
+
+
+		});
+});
+
+
+	$(document).ready(function() {
+		$(".various").fancybox({
+			maxWidth	: 961,
+			maxHeight	: 600,
+			fitToView	: false,
+			width		: '100%',
+			height		: '100%',
+			autoSize	: true,
+			closeClick	: false,
+			openEffect	: 'elastic',
+			closeEffect	: 'elastic'
+
+		});
+
+});
+
+/*  ==========  Maps iframe Fancy Box END ============== */
+
+
+/*  ==========  Videos iframe Fancy Box START ============== */
+	$(document).ready(function() {
+		$(".videos").fancybox({
+			maxWidth	: 620,
+			maxHeight	: 390,
+			fitToView	: true,
+			width		: '100%',
+			height		: '100%',
+			autoSize	: true,
+			closeClick	: false,
+			openEffect	: 'elastic',
+			closeEffect	: 'elastic'
+
+
+
+		});
+});
+
+/*  ==========  Videos iframe Fancy Box END ============== */
+
+
+/*  ==========  END Fancy Box ============== */
+
+
+/*  ==========  Multiple Images Fancy Box ============== */
+$(document).ready(function() {
+	$(".fancybox-thumb1").fancybox({
+		prevEffect	: 'none',
+		nextEffect	: 'none',
+		helpers	: {
+			title	: {
+				type: 'outside'
+			},
+			overlay	: {
+				opacity : 0.8,
+				css : {
+					'background-color' : '#000'
+				}
+			},
+			thumbs	: {
+				width	: 50,
+				height	: 50
+			}
+		}
+	});
+
+
+
+		$(".fancybox-thumb2").fancybox({
+			prevEffect	: 'none',
+			nextEffect	: 'none',
+			helpers	: {
+				title	: {
+					type: 'outside'
+				},
+				overlay	: {
+					opacity : 0.8,
+					css : {
+						'background-color' : '#000'
+					}
+				},
+				thumbs	: {
+					width	: 50,
+					height	: 50
+				}
+			}
+	});
+
+		$(".fancybox-thumb3").fancybox({
+			prevEffect	: 'none',
+			nextEffect	: 'none',
+			helpers	: {
+				title	: {
+					type: 'outside'
+				},
+				overlay	: {
+					opacity : 0.8,
+					css : {
+						'background-color' : '#000'
+					}
+				},
+				thumbs	: {
+					width	: 50,
+					height	: 50
+				}
+			}
+	});
+
+
+		$(".fancybox-thumb4").fancybox({
+			prevEffect	: 'none',
+			nextEffect	: 'none',
+			helpers	: {
+				title	: {
+					type: 'outside'
+				},
+				overlay	: {
+					opacity : 0.8,
+					css : {
+						'background-color' : '#000'
+					}
+				},
+				thumbs	: {
+					width	: 50,
+					height	: 50
+				}
+			}
+	});
+
+
+		$(".fancybox-thumb5").fancybox({
+			prevEffect	: 'none',
+			nextEffect	: 'none',
+			helpers	: {
+				title	: {
+					type: 'outside'
+				},
+				overlay	: {
+					opacity : 0.8,
+					css : {
+						'background-color' : '#000'
+					}
+				},
+				thumbs	: {
+					width	: 50,
+					height	: 50
+				}
+			}
+	});
+
+
+		$(".fancybox-thumb6").fancybox({
+			prevEffect	: 'none',
+			nextEffect	: 'none',
+			helpers	: {
+				title	: {
+					type: 'outside'
+				},
+				overlay	: {
+					opacity : 0.8,
+					css : {
+						'background-color' : '#000'
+					}
+				},
+				thumbs	: {
+					width	: 50,
+					height	: 50
+				}
+			}
+	});
+});
+
+/*  ==========  Multiple Images Fancy Box END ============== */
+
+
+</script>
+
+<style type="text/css">
+#fancybox-left-ico {
+ left: 20px;
+}
+
+#fancybox-right-ico {
+ right: 20px;
+ left: auto;
+}
+
+</style>
+</head>
+<body id="page5">
+<div>
+  <div id="main-tail-bot">
+      <div id="main">
+        <!-- header -->
+        <header>
+          <div class="logo"><a href="index.html"><div class="logo1">Heroes Del Escambray</div><div class="logo3">Lucha campesina contra el comunismo (1960-1966)</div></a></div>
+          <nav>
+            <ul>
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="index-1.html">Lucha</a></li>
+              <li><a href="index-2.html">Proclama</a></li>
+              <li class="act"><a href="index-4.html">Multimedia</a></li>
+              <li><a href="index-5.html">Libros</a></li>
+              <li><a href="index-3.html">M&#225;rtires</a></li>
+              <li class="p_cautivos-btn"><a href="index-6.html">Pueblos Cautivos</a></a></li>
+            </ul>
+          </nav>
+          <div id="contact-us-btn"><a href="contact-us.html">Contactarnos</a></div>
+        </header>
+        <!-- content -->
+        <section id="content">
+          <div class="box-1">
+            <div class="row-1">
+              <div class="inner-2">
+                <article class="wrapper">
+                  <h2><strong>Fotos/Mapas/Videos/Documentales<span>de guerrilleros anticomunistas</span></strong></h2>
+
+          <!----START Photos content--->
+                <div id="panel1" class='panel'>
+
+					   <div class="box3">
+						<div class="row-1">
+						  <div class="inner">
+							<div class="wrapper">
+								<h2><strong>Fotos<span>de guerrillas ordenadas por provincias</span></strong></h2>
+								 <p class="line2"></p>
+								 <div class="mapsbtn">
+
+                          <!-- Fotos Oriente START -->
+								 <a class="btn3 fancybox-thumb1" rel="fancybox-thumb1" href="images/gallery/oriente/AlbertoOrtegaOrtega.jpg" title="Alberto Ortega Ortega muri&#243; en combate en San Imias, Oriente.">
+                                 Guerrillas en<span>Oriente</span></a>
+
+									<a class="fancybox-thumb1" rel="fancybox-thumb1" href="images/gallery/oriente/AmancioMosqueda.jpg" title="Amancio Mosqueda realiz&#243; varios desembarcos desde el exilio, llevando grupos de infiltraci&#243;n para reforzar a los alzados de Oriente.Muri&#243; en combate enfrentando las tropas del ej&#233;rcito castrista."></a>
+
+									<a class="fancybox-thumb1" rel="fancybox-thumb1" href="images/gallery/oriente/AngelCastillo.jpg" title="&#193;ngel Castillo despues de infiltrarse desde el exilio para continuar la lucha guerrillera, muere en combate enfrentando las tropas del ej&#233;rcito castrista. &#160;"></a>
+
+									<a class="fancybox-thumb1" rel="fancybox-thumb1" href="images/gallery/oriente/Armentino-elindio-Feria.jpg" title="Armentino -El Indio- Feria, jefe de una guerrilla de exiliados que desembarco al este de la Isla, con el prop&#243;sito de fomentar un frente guerrillero. Muri&#243; en combate rodeado por varios centenares de las reci&#233;n formadas milicias populares."></a>
+
+									<a class="fancybox-thumb1" rel="fancybox-thumb1" href="images/gallery/oriente/BienvenidoFuentes.jpg" title="Bienvenido Fuentes, Se infiltra en la zona de Oriente desde el exilio para fomentar un foco guerrillero. Cae abatido en el primer enfrentamiento que tienen con las fuerzas marxistas."></a>
+
+									<a class="fancybox-thumb1" rel="fancybox-thumb1" href="images/gallery/oriente/ElJabaoMartinezQuiroga.jpg" title="El Jabao Mart&#237;nez Quiroga ex guardia rural y ex preso pol&#237;tico, regres&#243; del exilio, infiltr&#225;ndose en Oriente. Muri&#243; en combate en 1964, despu&#233;s de batirse &#233;l solo, durante seis horas contra un contingente de 200 milicianos."></a>
+
+									<a class="fancybox-thumb1" rel="fancybox-thumb1" href="images/gallery/oriente/FranciscoCid.jpg" title="Francisco -Paco- Cid es capturado y fusilado despu&#233;s de infiltrarse en la zona de Oriente desde el exilio, para fomentar un foco guerrillero. Proviene de una familia de combatientes democr&#225;ticos por la libertad de Cuba."></a>
+
+									<a class="fancybox-thumb1" rel="fancybox-thumb1" href="images/gallery/oriente/guerrillas.jpg" title="Guerrillas anticomunistas"></a>
+
+									<a class="fancybox-thumb1" rel="fancybox-thumb1" href="images/gallery/oriente/JoseRodriguezTerrero_Changuily.jpg" title="Jose Rodr&#237;guez Terrero -Changuili-, Guerrillero fusilado en Santiago de Cuba el 23 de enero, 1963. Ten&#237;a 20 a&#241;os de edad al morir. Dos hermanos y su padre cumplieron condenas en el presidio pol&#237;tico."></a>
+
+									<a class="fancybox-thumb1" rel="fancybox-thumb1" href="images/gallery/oriente/JustoLeiva.jpg" title="Justo Leiva, Se inflitra en la zona de Oriente desde el exilio para fomentar un foco guerrillero. Murio en combate en Octubre del 1969 en Baracoa."></a>
+
+									<a class="fancybox-thumb1" rel="fancybox-thumb1" href="images/gallery/oriente/ManuelRodriguezPineda.jpg" title="Manuel Rodr&#237;guez Pineda es capturado y fusilado despu&#233;s de infiltrase en la zona de Oriente desde el exilio, para fomentar un foco guerrillero."></a>
+
+									<a class="fancybox-thumb1" rel="fancybox-thumb1" href="images/gallery/oriente/PriscoHadfegMartinez.jpg" title="Prisco Hadfeg Mart&#237;nez, oficial guerrillero fue fusilado en Oriente en 1964."></a>
+
+									<a class="fancybox-thumb1" rel="fancybox-thumb1" href="images/gallery/oriente/TicoHerrera.jpg" title="Tico Herrera, Se infiltra en la zona de Oriente desde el exilio para fomentar un foco guerrillero. Cae abatido en el primer enfrentamiento que tienen con las fuerzas marxistas."></a>
+
+									<a class="fancybox-thumb1" rel="fancybox-thumb1" href="images/gallery/oriente/TutoPupoCruz.jpg" title="Pablo Pupo Cruz -Tuto-, Renombrado jefe guerrillero de Oriente, muri&#243; en combate, 1962."></a>
+
+									<a class="fancybox-thumb1" rel="fancybox-thumb1" href="images/gallery/oriente/VicenteMendez.jpg" title="Vicente M&#233;ndez alzado en 1960 en Las Villas, desembarco en Oriente en abril de 1970, muriendo en combate."></a>
+
+									<a class="fancybox-thumb1" rel="fancybox-thumb1" href="images/gallery/oriente/vicente-mendez-boat.jpg" title="Vicente M&#233;ndez y sus hombres a bordo de un barco en camino a las costas Cubanas"></a>
+
+									<a class="fancybox-thumb1" rel="fancybox-thumb1" href="images/gallery/oriente/VicenteMendez1.jpg" title="Jefe Guerrillero Vicente M&#233;ndez"></a>
+
+                            <!-- Fotos Oriente END -->
+
+
+                           <!-- Fotos Camaguey START -->
+								 <a class="btn3 fancybox-thumb2" rel="fancybox-thumb2" href="images/gallery/camaguey/AdalbertoMendezEsquijarrosa.jpg" title="Adalberto M&#233;naez Esquijarrosa, apodado -El Quija- de seis pies seis pulgadas de estatura, estuvo alzado desde 1960 hasta su fusilamiento en 1963. El Quija, activo en el norte de Las Villas y el Escambray, rompi&#243; numerosos cercos y fue herido varias veces. Foto tomada despues de su captura.">
+                                 Guerrillas en<span>Camag&#252;ey</span></a>
+
+									<a class="fancybox-thumb2" rel="fancybox-thumb2" href="images/gallery/camaguey/muertosEncombateNo_identificados.jpg" title="Una imagen de la guerra. Tres alzados no identificados, muertos en combate en el norte de Las Villas, donde la gran mayor&#237;a de los que cayeron fueron enterrados en fosas comunes. S&#243;lo en contadas ocasiones se les entregaban los cad&#225;veres a los familiares."></a>
+
+									<a class="fancybox-thumb2" rel="fancybox-thumb2" href="images/gallery/camaguey/Clemente_Aragon.jpg" title="Clemente Arag&#243;n fue el &#250;ltimo alzado en Camag&#252;ey. Ex soldado del Ej&#233;rcito Constitucional. En 1962 se uni&#243; a Mario Bravo y a Juan Alberto Mart&#237;nez. Arag&#243;n fue fusilado en 1965."></a>
+
+									<a class="fancybox-thumb2" rel="fancybox-thumb2" href="images/gallery/camaguey/FloroCamacho.jpg" title="Floro Camacho, jefe guerrillero en la provincia de Camag&#252;ey. Despu&#233;s de estar cercado por cuatro d&#237;as en una cueva, con una herida de bala infestada, fue capturado y posteriormente fusilado."></a>
+
+									<a class="fancybox-thumb2" rel="fancybox-thumb2" href="images/gallery/camaguey/ArnaldoMartinezAndrade.jpg" title="Arnoldo Mart&#237;nez Andrade Jefe de las guerrillas campesinas del Frente Norte de Las Villas."></a>
+
+									<a class="fancybox-thumb2" rel="fancybox-thumb2" href="images/gallery/camaguey/JuanAlbertoMartinezAndrade.jpg" title="Juan Alberto Mart&#237;nez Andrades -Bet&#237;n- Jefe de las guerrillas campesinas del Frente Norte de Las Villas. Caido en combate el julio 4 de 1965."></a>
+
+									<a class="fancybox-thumb2" rel="fancybox-thumb2" href="images/gallery/camaguey/huellasDeSangre.jpg" title="Esta foto fue encontrada en el bolsillo de la camisa de un alzado muerto. La foto qued&#243; con las huellas de su sangre, y se ve borrosa. Nunca se sabr&#225; exactamente cuantos patriotas murieron en la Guerra olvidada."></a>
+
+									<a class="fancybox-thumb2" rel="fancybox-thumb2" href="images/gallery/camaguey/JorgeLabradaTaguari.jpg" title="Se neg&#243; a declarar ante sus torturadores y murio valientemente enfrentando el pared&#243;n de fusilamiento."></a>
+
+									<a class="fancybox-thumb2" rel="fancybox-thumb2" href="images/gallery/camaguey/JulioPerezGomezLaVara.jpg" title="Julio P&#233;rez G&#243;mez -La Vara- uno de los hombres de Manolito L&#243;pez muri&#243; fusilado."></a>
+
+									<a class="fancybox-thumb2" rel="fancybox-thumb2" href="images/gallery/camaguey/ManolitoLopezElLoco.jpg" title="Comandante Manolito L&#243;pez L&#243;pez -El Loco- muri&#243; en combate. El apodo de El Loco le vino por su audacia y su la manera temeraria de actuar ante el enemigo. En su ultimo cerco, jefe guerrillero de 19 a&#241;os de edad al saber que estaba herido de muerte, ordeno a sus hombres a que se retiraran y murio valientemente cubri&#233;ndoles la retirada."></a>
+
+                            <!-- Fotos Camaguey END -->
+
+
+                            <!-- Fotos Las Villas START -->
+								 <a class="btn3 fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/alzados_enElEscambray.jpg" title="Un grupo de alzados en el Escambray. El hombre joven, de bigote, sentado a la izquierda es Lupe Tard&#237;o, que muri&#243; en el combate de El D&#225;til. De los seis hermanos Tard&#237;o, cinco murieron en la lucha contra el comunismo.">
+                                 Guerrillas en<span>Las Villas</span></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/primerosCargamentosDeArmas.jpg" title="Uno de los primeros cargamentos de armas en llegar al Escambray fueron llevados personalmente por un joven m&#233;dico llamado Orlando Bosch Avila. M&#225;s tarde, desde el exilio, Bosch intent&#243; suministrar a los alzados de cargamentos llevados por mar a la costa norte de Las Villas."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/AlzadosEnElEscambray.jpg" title="Alzados en el Escambray. A la extrema izquierda, Monguito P&#233;rez, m&#225;rtir de la lucha. A la extrema derecha, Evelio Duque Mijares. En el centro el Padre Francisco, un cura guerrillero."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/Armasdelaguerra.jpg" title="Armas usadas en la guerra del Escambray"></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/BenitoCampos.jpg" title="Comandante Benito Campos -Campitos- se suicido antes de caer prisionero."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/BenjaminTardio.jpg" title="Capit&#225;n Benjamin Tard&#237;o Hern&#225;ndez, jefe de guerrillas en la provincia de Las Villas. Muri&#243; fusilado."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/BenjaminTardioyguerrillas.jpg" title="Capit&#225;n Benjamin Tardio y hombres de su guerrilla."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/tondike1.jpg" title="A Margarito Lanza Flores le dec&#237;an Tondike, operaba en la zona del Circuito Norte de Las Villas, desde Corralillo a Sagua La Grande. Cuando las tropas castr&#237;stas incendiaron el sembrad&#237;o y el audaz jefe guerrillero fue rodeado en un campo de ca&#241;a, se neg&#243; a rendirse. Tondike fue capturado con graves quemaduras, con su pecho y rostro cubiertos de ampollas."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/tondike.jpg" title="Tondike fue fusilado a la sombra del Puente Rodrigo. En esta foto, tomada por los propios castristas, se pueden ver las ampollas en la nariz, los labios y la frente del valiente alzado. Esta triste fotograf&#237;a, la &#250;ltima tomada en vida a Margarito Lanza Flores."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/BlasTardioHernandez.jpg" title="Blas Tard&#237;o Hern&#225;ndez fue uno de los hombres m&#225;s valientes del Escambray. Se mantuvo peleando desde que se alz&#243; en el verano de 1960 hasta que fue capturado en 1965. En un combate en que fue herido, se arrastr&#243; hasta una cueva donde cosi&#243; las heridas. Su guerrilla fue el &#250;ltimo grupo numeroso de alzados activos en Las Villas. Blas fue fusilado en 1965. De los seis hermanos Tard&#237;o, cinco murieron en la lucha contra Castro, y el sexto cumpli&#243; condena en el presidio pol&#237;tico."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/ComandantePedroGonzalez.jpg" title="Pedro Gonz&#225;lez, Un agresivo jefe guerrillero en combate, que burlo muchos los cercos. Cay&#243; en combate en La Barca, Las Villas, 1964."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/cadaver-delComandantePedroGonzalez.jpg" title="El cad&#225;ver del Comandante Pedro Gonz&#225;lez fue mostrado como trofeo en el parque de Trinidad."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/calibre30guerrillaSinesioWalsh.jpg" title="La calibre .30 de la guerrilla de Sinesio Walsh, Escambray 1960."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/CapitanAdolfoSargen.jpg" title="Capit&#225;n Adolfo Sargen fusilado en Las Villas, 1963."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/CapitanClaroMollinedo.jpg" title="Capit&#225;n Jesus Claro Mollinedo Placencia, Jefe guerrillero en Quemado de G&#252;ines. Fusilado en la Provincia de Las Villas, 1962."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/CapitanLuisMolina_ElBoticario.jpg" title="Luis Molina Padron -El Boticario-, Jefe de guerrilla alzado desde 1961. Fue fusilado en Cartagena, Las Villas, 1963."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/JoseAPalominoColon.jpg" title="Jos&#233; A. Palomino Col&#243;n, un ex-militar, fue uno de los cinco jefes guerrilleros fusilados en La Campana, el 13 de octubre de 1960."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/CarlosSuco.jpg" title="Carlos Zuco -de la guerrilla de Luis Vargas- fusilado 1963 en Las Villas."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/CarnetIdentidadFrenteOsvaldoRamirez.jpg" title="Carnet de Identidad de los combatientes del frente de operaciones Osvaldo Ram&#237;rez."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/Osvaldo_Ramirez_Garcia.jpg" title="Ex-capit&#225;n del ejercito rebelde, Osvaldo Ram&#237;rez Garc&#237;a."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/OsvaldoRamirez.jpg" title="Comandante en Jefe del Escambray, Osvaldo Ram&#237;rez."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/cadaver-de-osvaldo-ramirez.jpg" title="Cadaver del legendario Comandante en Jefe del Escambray, Osvaldo Ram&#237;rez."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/CheitoLeon.jpg" title="Jos&#233; Le&#243;n Jim&#233;nez -Cheito-, Ex miliciano. Ultimo comandante en jefe de los alzados del Escambray. Se alz&#243; en abril de 1961. Muerto en combate a la edad de 26 a&#241;os en mayo de 1964, Las Villas."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/DiosdadoMesa.jpg" title="Diosdado Mesa fue jefe guerrillero. Lleg&#243; al exilio por v&#237;as clandestinas en 1961, pero regres&#243; a Cuba varias veces en misiones secretas, tratando de ayudar a los alzados de Las Villas."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/DocumentoComandanciaEscambray.jpg" title="Documento de la Comandancia del Escambray"></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/EmilioCarretero.jpg" title="Legendario jefe guerrillero Julio Emilio Carretero. Foto tomada horas despu&#233;s de que fuera entregado al G-2 por el delator Alberto Delgado, el tristemente c&#233;lebre Hombre de Maisinic&#250;. Fue fusilado junto a varios de sus hombres. Todos murieron cantando el Himno Nacional."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/Escambray_ Jose BerberenayOtros.jpg" title="Guerrilleros del Escambray. De izquierda a derecha: Jos&#233; Berberena, Benicio Camacho, Adalberto Arc&#237;a, Joaqu&#237;n Membibre, Odeime Pomo y El Tigrecito, Inocencio D&#237;az."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/Escambray-Guerillas.jpg" title="Guerillas en el Escambray"></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/GuerrillasEscambray1961.jpg" title="Guerrillas en el Escambray, 1961."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/EusebioPenalver.jpg" title="Eusebio De Jes&#250;s Pe&#241;alver despu&#233;s de ser capturado. Cummplio una larga condena de 28 a&#241;os en su posici&#243;n de plantado en las carceles cubanas."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/EusebioPenalver_JoaquinMembibre.jpg" title="Eusebio Pe&#241;alver y Joaquin Membibre, Escambray, 1960."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/EvelioDuque.jpg" title="Evelio Duque Mijares -ex-teniente de guerrillas en la lucha contra Batista- fue seleccionado por el clandestinaje de La Habana, para unificar y vertebrar a las guerrillas del Escambray."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/EvelioDuque_OsvaldoRamirez.jpg" title="A la izquierda, Evelio Duque Mijares, primer jefe de los grupos alzados en el Escambray. A la derecha, el legendario Osvaldo Ram&#237;rez, el m&#225;s audaz de los jefes guerrilleros, muerto en combate en Las Aromas de Vel&#225;zquez el 16 de abril de 1962."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/demetrio-nano-perez.jpg" title="Demetrio Rom&#225;n P&#233;rez -Nano-, Jefe guerrillero ejecutado en el pared&#243;n en Santa Clara en Noviembre de 1963."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/GriceldeLaTorreKIA.jpg" title="Gricel de la Torre guerrillero en la zona del escambray. Muri&#243; en combate junto a otros guerrilleros despu&#233;s de ser delatado por un campesino miliciano de la zona."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/GuapoRivera_VictorChicheGamez.jpg" title="Dos valientes jefes guerrilleros que sobrevivieron multiples e intensos combates y muchos a&#241;os de presidio pol&#237;tico: Agapito El Guapo Rivera y V&#237;ctor Chiche G&#225;mez."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/guerrillerosNo_identificados_Escambray.jpg" title="Un grupo de guerrilleros no identificados en el Escambray."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/GuillermoPerezCalzada.jpg" title="Guillermo P&#233;rez Calzada fue un oficial guerrillero de la tropa de Osvaldo Ram&#237;rez."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/ismaelhereidaRoldan.jpg" title="Ismael Heredia Roldan -El L&#225;tigo Negro- (Capit&#225;n). Jefe de la Columna No. 4, integrada por 22 hombres, se alza el 6 de julio de 1960 en la zona del Escambray. Muere en combate en 1961."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/JoaquinMembibreyOtrosGuerrilleros.jpg" title="Joaqu&#237;n Membibre y otros Guerrilleros"></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/JoseAPalominoColon.jpg" title="José Palomino Colón, Ex militar. Jefe de guerrilla. Fusilado en La Campana el 13 de octubre de 1960. Foto tomada despues de su captura."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/JoseBerberena.jpg" title="Jos&#233; Berberena en Nuevo Mundo, 1960."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/JoseMartiCamposLinares.jpg" title="Jose Mart&#237; Campos Linares -ex teniente del Ej&#233;rcito Rebelde- dirig&#237;a casi dos centenares de hombres divididos en varias unidades guerrilleras, en el norte de Las Villas, adem&#225;s de operar frecuentemente en Matanzas. Muri&#243; en combate d&#237;a tres de septiembre del 1964, en la carretera central, cerca de Los Arabos, en Matanzas, junto algunos de sus hombres."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/JoseRamonCrespo.jpg" title="Jose Ram&#243;n Crespo. Muerto en combate, Manicaragua, Las Villas, enero 4, 1963. Miembro de la guerrilla de Porfirio Guillen."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/LaNinaDelEscambray.jpg" title="Esta joven con una ametralladora Thompson es Zoila Aguila Almeida, la famosa Ni&#241;a del Escambray, la &#250;nica mujer que fue jefe de una guerrilla. Estuvo alzada hasta 1964. Su esposo fue fusilado y ella fue presa pol&#237;tica plantada."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/LaNinadePlacetas.jpg" title="Teniente Zoila Aguila Almeida. Conocida como la Ni&#241;a del Escambray o la Ni&#241;a de Placetas."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/Mesa-Tierrita-Membibre.jpg" title="Diosdado Mesa, Joaqu&#237;n Membibre y otros guerrilleros en el Escambray."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/MinerdelaTorre_KIA1963.jpg" title="Capit&#225;n Miner de la Torre. Muri&#243; en combate en el Frente Sur del Llano."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/OliverioIbanez.jpg" title="Oliverio Ib&#225;&#241;ez Cadalso Jefe guerrillero, es cercado con su guerrilla en la finca Ballestero, pr&#243;xima a Topes de Collantes. En el enfrentamiento es herido el jefe guerrillero, quien aun as&#237; contin&#250;a combatiendo hasta que un disparo de bazuca acaba con su vida."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/pedroGonzalezandhismen.jpg" title="Pedro Gonz&#225;lez y sus hombres"></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/PedroRodriguez_firstMartir.jpg" title="Pedro Rodr&#237;guez, un carnicero de la zona, intento un alzamiento a principios de 1960. Rodeado por fuerzas de la polic&#237;a castrista en la Finca Can-Can, Pedro Rodr&#237;guez -armado solamente con un rev&#243;lver-, trat&#243; de escapar pero fue ametrallado por la espalda, convirti&#233;ndose en el primer m&#225;rtir de la lucha guerrillera del Escambray."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/PepeRebozoFebles.jpg" title="Pepe Rebozo Febles fue el lugarteniente de Luis Vargas, estuvo alzado desde 1961 hasta 1966. Fue el &#250;ltimo alzado en ser capturado. Despu&#233;s de cumplir una larga condena en el presidio pol&#237;tico, lleg&#243; a Miami en septiembre de 1988."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/plinio_prieto.jpg" title="Plinio Prieto fue maestro de escuela y ex-capit&#225;n del ejercito rebelde. Despues de alzarze contra el nuevo gobierno. Se fue de Cuba clandestinamente y regres&#243; para vertebrar los suministros y los alzamientos del Escambray. Fue fusilado en La Campana el 13 de octubre de 1960."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/plinio_prieto_capturado.jpg" title="Plinio Prieto ex-capit&#225;n del ejercito rebelde, despues de ser capturado"></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/Porfirio_Ramirez.jpg" title="Porfirio Reemberto -El Negro- Ram&#237;rez, Ex capit&#225;n del Ej&#233;rcito Rebelde. Presidente de la Federaci&#243;n de Estudiantes Universitario, (FEU) de la Universidad Central Marta Abreu en Las Villas. Jefe de guerrilla, fusilado en La Campana el 12 de octubre de 1960."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/prisionerosEnTopesCollantes.jpg" title="Foto tomada a un grupo de alzados prisioneros en Topes de Collantes a finales de 1960. Muchos de estos hombres fueron torturados, siendo fusilados con salvas y casi ahogados en represas."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/ramonDelsolSori.jpg" title="De los archivos del tenebroso Ministerio del Interior, la foto de un m&#225;rtir. El jefe guerrillero Ram&#243;n del Sol Sor&#237; fue capturado herido, muri&#243; ante el pared&#243;n de fusilamiento."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/ReunionGuerrillasenManacal.jpg" title="Reuni&#243;n de jefes guerrilleros en el Manacal"></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/SinesioWalsh.jpg" title="El Comandante Sinesio Walsh R&#237;os, ex-capit&#225;n del Movimiento 26 de Julio, era un hombre de valor. Lleg&#243; a tener m&#225;s de un centenar de hombres en su guerrilla, pero fue cercado y capturado antes de poder recibir un cargamento de armas que esperaba."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/SinesioWalsh_parteDeSuGuerrilla.jpg" title="Ex-capit&#225;n del Movimiento 26 de Julio, Sinesio Walsh R&#237;os y varios de sus hombres, Escambray 1960"></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/SinesioWalshRiosyOtrosAlzados.jpg" title="Sinesio Walsh R&#237;os y varios de sus hombres, Escambray 1960"></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/SinesioySusHombres1960.jpg" title="Sinesio Walsh R&#237;os, Dirigido una guerrilla en el Escambray contra el gobierno de Batista. En esta foto esta con su otra guerrilla nuevamente en el Escambray pero ahora luchando contra el comunismo."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/tomasitoSanGil.jpg" title="Comandante Tomasito San Gil era llamado por los castristas El Brazo M&#225;s Fuerte del Escambray"></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/TomasSanGil.jpg" title="Tomasito durante una reuni&#243;n de guerrillas en El Manacal en septiembre de 1960"></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/valeMontenegro.jpg" title="Vale Montenegro, Valiente jefe guerrillero del frente Sur del Llano en la zona del escambray. Muri&#243; fusilado. Esta foto fue tomada despues de ser capturado."></a>
+
+									<a class="fancybox-thumb3" rel="fancybox-thumb3" href="images/gallery/las-villas/Victor_Chiche_Gamez_Escambray.jpg" title="Una guerrilla en el Escambray. El segundo de la izquierda, con camisa oscura es V&#237;ctor Chiche G&#225;mez, uno de los pocos jefes guerrilleros en sobrevivir la cruel guerra."></a>
+
+                            <!-- Fotos Las Villas END -->
+
+
+                             <!-- Fotos Matanzas START -->
+								 <a class="btn3 fancybox-thumb4" rel="fancybox-thumb4" href="images/gallery/matanzas/cantodeunAveParaComunicarse.jpg" title="Un alzado imita el canto de un ave para comunicarse con otros guerrilleros.">
+                                 Guerrillas en Matanzas</span></a>
+
+									<a class="fancybox-thumb4" rel="fancybox-thumb4" href="images/gallery/matanzas/descansanDespuesdeUnaescaramuza.jpg" title="Los guerrilleros descansan despu&#233;s de una escaramuza."></a>
+
+									<a class="fancybox-thumb4" rel="fancybox-thumb4" href="images/gallery/matanzas/FeloGonzalo-ElAsturiano.jpg" title="Felo Gonzalo -El Asturianito-, Jefe guerrillero del Frente Sur, muerto en combate junto a su hermano Dionisio."></a>
+
+									<a class="fancybox-thumb4" rel="fancybox-thumb4" href="images/gallery/matanzas/GerardoFundora.jpg" title="Gerardo Fundora. Jefe de guerrilla de la provincia de Matanzas. Fue fusilado en el Castillo San Severino."></a>
+
+									<a class="fancybox-thumb4" rel="fancybox-thumb4" href="images/gallery/matanzas/GuerrillaDeDelioAlmeida.jpg" title="Se cree que estos siete hombres son alzados de la provincia de Matanzas. El hombre sentado al centro, con una ametralladora M3 ha sido identificado como Delio Almeida, l&#237;der guerrillero fusilado por el castrismo."></a>
+
+									<a class="fancybox-thumb4" rel="fancybox-thumb4" href="images/gallery/matanzas/guerrillero-capturado.jpg" title="Guerrillero capturado por la milicia"></a>
+
+									<a class="fancybox-thumb4" rel="fancybox-thumb4" href="images/gallery/matanzas/LazaroRamos_kiamatanzas1964.jpg" title="Guerrillero bajo la guerrilla de Jos&#233; Mart&#237; Campos Linares. Muere en un enfrentamiento el d&#237;a tres de septiembre del 1964, en la carretera central, cerca de Los Arabos, en Matanzas"></a>
+
+									<a class="fancybox-thumb4" rel="fancybox-thumb4" href="images/gallery/matanzas/LuisReyes_guerrillaMatanzas.jpg" title="Guerrillero alzado en la zona de Matanzas"></a>
+
+									<a class="fancybox-thumb4" rel="fancybox-thumb4" href="images/gallery/matanzas/NivaldoVega-KIA_Matanzas.jpg" title="Nibaldo Vega guerrillero bajo la guerrilla de Jos&#233; Mart&#237; Campos Linares. Muere en un enfrentamiento en la carretera central, cerca de Los Arabos, en Matanzas."></a>
+
+									<a class="fancybox-thumb4" rel="fancybox-thumb4" href="images/gallery/matanzas/PablitoFinale.jpg" title="Pablito Finalet, Guerrillero de bajo la guerrilla de Campitos, se suicido antes de caer prisionero en el ultimo cerco en Matanzas, en Los Arabos, 1964."></a>
+
+									<a class="fancybox-thumb4" rel="fancybox-thumb4" href="images/gallery/matanzas/PedritoSanchez-hijo.jpg" title="Pedro -Pedrito- S&#225;nchez hijo del Comandante Pedro S&#225;nchez Gonz&#225;lez -Perico-. Era un joven con excelentes dotes de estudiante, se alzo bajo la guerrilla de su padre, muere el d&#237;a 7 de abril de 1963, luchando en los predios de la finca Cantabria, pr&#243;ximo al pueblo de Pedro Betancourt, mientras intentaban evadir uno de los cercos tendidos por las fuerzas del gobierno marxista."></a>
+
+									<a class="fancybox-thumb4" rel="fancybox-thumb4" href="images/gallery/matanzas/PericoSanchez.jpg" title="Comandante Pedro S&#225;nchez Gonz&#225;lez -Perico-. Uno de los guerrilleros legendarios de Matanzas. Perdio a dos de sus hijos Ra&#250;l -lalo- y&#160; Pedro -Pedrito- en combate. Delatado por uno de sus contactos es cercado en G&#252;ira de Melena y muere como un tit&#225;n combatiendo contra decenas de milicianos y soldados."></a>
+
+									<a class="fancybox-thumb4" rel="fancybox-thumb4" href="images/gallery/matanzas/PericoSanchezeHijo.jpg" title="Comandante Pedro S&#225;nchez Gonz&#225;lez -Perico-. Uno de los guerrilleros legendarios de Matanzas. Perdi&#243; a dos de sus hijos Ra&#250;l -lalo- y&#160; Pedro -Pedrito- en combate. Delatado por uno de sus contactos es cercado en G&#252;ira de Melena y muere como un tit&#225;n combatiendo contra decenas de milicianos y soldados."></a>
+
+									<a class="fancybox-thumb4" rel="fancybox-thumb4" href="images/gallery/matanzas/PichiCatala_JuanJose.jpg" title="Juan Jos&#233; Catal&#225; Coste, -Pichi- siendo teniente del Ejercito Rebelde al triunfo de la revoluci&#243;n."></a>
+
+									<a class="fancybox-thumb4" rel="fancybox-thumb4" href="images/gallery/matanzas/PichiCatala_JuanJose2.jpg" title="Juan Jos&#233; Pichi Catal&#225;, Comandante Jefe de alzados de Matanzas, muerto en combate, 1963."></a>
+
+									<a class="fancybox-thumb4" rel="fancybox-thumb4" href="images/gallery/matanzas/PichiCatala_JuanJose1.jpg" title="Juan Jos&#233; Pichi Catal&#225;, Audaz jefe guerrillero en la provincia de Matanzas "></a>
+
+									<a class="fancybox-thumb4" rel="fancybox-thumb4" href="images/gallery/matanzas/RaulLaloSanchez.jpg" title="Ra&#250;l -lalo- S&#225;nchez hijo del Comandante Pedro S&#225;nchez Gonz&#225;lez -Perico-. Fue miliciano, y hab&#237;a participado en la Primera limpia del Escambray. El muchacho regres&#243; de Las Villas lleno de asco y abochornado, despu&#233;s de ver a milicianos quemar los boh&#237;os de los guajiros que se negaban a ser relocalizados. Esta experiencia lo llev&#243; a conspirar junto con su padre. Muerto en combate en la Provincia de Matanzas, 9 de abril de 1963."></a>
+
+									<a class="fancybox-thumb4" rel="fancybox-thumb4" href="images/gallery/matanzas/RaulRamosRamos.jpg" title="Ra&#250;l Ramos Ramos muri&#243; en combate en Matanzas, 1963."></a>
+
+									<a class="fancybox-thumb4" rel="fancybox-thumb4" href="images/gallery/matanzas/RigobertoTartabull.jpg" title="Rigoberto Tartabull era jefe de guerrillas. Muri&#243; en combate. La bala castrista fue disparada por uno de sus hermanos que era oficial de milicia. Otro hermano, tambi&#233;n miliciano, muri&#243; combatiendo contra los alzados en Matanzas. Triste ha sido la guerra en que hermanos han matado hermanos."></a>
+
+                            <!-- Fotos Matanzas END -->
+
+
+                              <!-- Fotos La Habana START -->
+								 <a class="btn3 fancybox-thumb5" rel="fancybox-thumb5" href="images/gallery/la-habana/AlbertoLazoPastrana.jpg" title="Alberto Lazo Pastrana hab&#237;a sido teniente del Ej&#233;rcito Rebelde. Dirigi&#243; el primer foco guerrillero en la provincia capitalina, alz&#225;ndose en armas en la Loma del Grillo. En su ultimo combate peleo junto a sus hombres hasta que no le quedaron mas municiones y tuvieron que rendirse. Alberto Lazo Pastrana muri&#243; en el presidio pol&#237;tico.">
+                                 Guerrillas en<span>La Habana</span></a>
+
+									<a class="fancybox-thumb5" rel="fancybox-thumb5" href="images/gallery/la-habana/BrazaleteGuerrillero.jpg" title="Brazalete Guerrillero"></a>
+
+									<a class="fancybox-thumb5" rel="fancybox-thumb5" href="images/gallery/la-habana/TonyChaoFlores.jpg" title="Tony Chao Flores era menor de edad cuando se alz&#243; contra Batista. Poco tiempo despu&#233;s del triunfo de la revoluci&#243;n, el joven teniente del Ej&#233;rcito Rebelde comenz&#243; a conspirar. Fue uno de los principales eslabones en la l&#237;nea de suministros a los alzados. Perdi&#243; sus piernas a consecuencias de las heridas que sufri&#243; en un combate en La Habana. Fue apresado y sentenciado a muerte. Tony se enfrent&#243; al pared&#243;n sostenido por un par de muletas."></a>
+
+									<a class="fancybox-thumb5" rel="fancybox-thumb5" href="images/gallery/la-habana/DanielElIndioCardo.jpg" title="Daniel -El Indio Cardo- Jefe guerrillero en la zona de Jaruco. Muri&#243; Fusilado."></a>
+
+									<a class="fancybox-thumb5" rel="fancybox-thumb5" href="images/gallery/la-habana/FilibertoCoto_ElPipero.jpg" title="Filiberto Coto -El Pipero-, El m&#225;s conocido de los alzados de la provincia de La Habana. Operaba en la zona de Guines, Muri&#243; fusilado."></a>
+
+									<a class="fancybox-thumb5" rel="fancybox-thumb5" href="images/gallery/la-habana/guerrillas-de-jaruco.jpg" title="Guerrillas De Jaruco"></a>
+
+									<a class="fancybox-thumb5" rel="fancybox-thumb5" href="images/gallery/la-habana/sobrevivientesDeGuerrillerayEncinosa.jpg" title="Esta foto fue tomada en una casa en Hialeah, durante una reuni&#243;n de combatientes sobrevivientes de la lucha guerrillera en que compartieron con el escritor, locutor de radio e historiador Enrique G. Encinosa. Aparecen, de izquierda a derecha: Agapito Rivera El Guapo; Chiche G&#225;mez; Ra&#250;l Mart&#237;nez Hierro; Arcadio Peguero; el autor Enrique Encinosa; Jos&#233; A. D&#237;az; Jorge Rodr&#237;guez Tinguaro; Rigoberto Acosta L&#225;tigo; Osvaldo Ram&#237;rez (hijo); Amador Acosta; Enrique Ruano. Abajo: Roberto Prado; Ren&#225;n Llanes; Heriberto Castilo Cusi; Eduviges Z&#250;&#241;iga Querido y Felipe Villamil."></a>
+
+                            <!-- Fotos La Habana END -->
+
+
+                               <!-- Fotos Pinar Del Rio START -->
+ 								 <a class="btn3 fancybox-thumb6" rel="fancybox-thumb6" href="images/gallery/pinar-del-rio/BernardoCorrales.jpg" title="Bernardo Corrales fue capit&#225;n del Ej&#233;rcito Rebelde en la lucha contra Batista. S&#243;lo unos meses despu&#233;s del triunfo de la revoluci&#243;n, comenz&#243; a conspirar de nuevo. Fue uno de los primeros jefes alzados en Pinar del Rio. Fue traicionado por uno de sus contactos y fusilado en La Habana.">
+                                  Guerrillas en <span>Pinar Del Rio</span></a>
+
+									<a class="fancybox-thumb6" rel="fancybox-thumb6" href="images/gallery/pinar-del-rio/BienvenidoMachado.jpg" title="Bienvenido Machado muri&#243; en combate en Pinar del Rio, 1962."></a>
+
+									<a class="fancybox-thumb6" rel="fancybox-thumb6" href="images/gallery/pinar-del-rio/ClodomiroMiranda2.jpg" title="Clodomiro Miranda fue jefe guerrillero en Pinar del Rio. Herido grave en combate fue llevado al pared&#243;n de fusilamiento con heridas en la barriga y las piernas infestadas por gusanos."></a>
+
+									<a class="fancybox-thumb6" rel="fancybox-thumb6" href="images/gallery/pinar-del-rio/ClodomiroMiranda.jpg" title="Clodomiro Miranda fue jefe guerrillero en Pinar del Rio."></a>
+
+									<a class="fancybox-thumb6" rel="fancybox-thumb6" href="images/gallery/pinar-del-rio/EstebanMarquezNovo.jpg" title="Esteban M&#225;rquez Novo -El Tio- hab&#237;a intentado alzarse al principio de la gesta guerrillera. Despu&#233;s, se hab&#237;a fugado de la isla, regresando para crear c&#233;lulas de labores de inteligencia. Prefiri&#243; el suicidio a ser capturado."></a>
+
+									<a class="fancybox-thumb6" rel="fancybox-thumb6" href="images/gallery/pinar-del-rio/FranciscoMacheteRobaina.jpg" title="Francisco -Machete- Robaina, Jefe Guerrillero de la provincia de Pinar del Rio. Estuvo peleando hasta octubre de 1963 en que cay&#243; bajo el fuego enemigo en un combate en el entronque de Cowley."></a>
+
+									<a class="fancybox-thumb6" rel="fancybox-thumb6" href="images/gallery/pinar-del-rio/IsraelGarciaDiaz.jpg" title="Israel Garc&#237;a Diaz, Jefe Guerrillero muerto en combate en Pinar del Rio."></a>
+
+                              <!-- Fotos Pinar Del Rio END -->
+
+							  </div>
+							</div>
+						  </div>
+						</div>
+					  </div>
+
+				  </div>
+                  <p class="slide1"><a href="#" class="btn-slide1">Fotos</a></p>
+           <!-- End Photos content -->
+
+
+           <!----START Maps content--->
+                  <div id="panel2" class='pane2'>
+
+					   <div class="box3">
+						<div class="row-1">
+						  <div class="inner">
+							<div class="wrapper">
+								<h2><strong>Mapas<span>de guerrillas organizadas por provincias</span></strong></h2>
+								 <p class="line2"></p>
+
+								  <a class="btn3 maps fancybox.iframe" href="oriente.html">Guerrillas en<span>Oriente</span></a>
+								  <a class="btn3 maps fancybox.iframe" href="camaguey.html">Guerrillas en<span>Camag&#252;ey</span></a>
+								  <a class="btn3 maps fancybox.iframe" href="las_villas.html">Guerrillas en<span>Las Villas</span></a>
+								  <a class="btn3 maps fancybox.iframe" href="matanzas.html" >Guerrillas en Matanzas</a>
+								  <a class="btn3 maps fancybox.iframe" href="la_habana.html" title="">Guerrillas en<span> La Habana</span></a>
+								  <a class="btn3 maps fancybox.iframe" href="pinar_del_rio.html">Guerrillas en <span>Pinar Del Rio</span></a>
+
+							</div>
+						  </div>
+						</div>
+					  </div>
+				  	<!-- End content -->
+				  </div>
+                  <p class="slide2"><a href="#" class="btn-slide2">Mapas</a></p>
+
+
+                  <div id="panel3" class='panel'>
+                  <!----START Video content--->
+					   <div class="box3">
+						<div class="row-1">
+						  <div class="inner">
+							<div class="wrapper">
+								<h2><strong>Videos<span>sobre la lucha de las guerrillas anticomunistas en Cuba</span></strong></h2>
+								 <p class="line2"></p>
+                                <!----START Accordion--->
+									<div id="accordion">
+
+									<!----start Video Section--->
+										<h3><a href="#">Testimonios de Guerrilleros Anticomunistas<span class='expand_but expand_text2'>>> pulsar para ver videos</span></a></h3>
+										<div>
+
+                                          <div class="videoSec">
+
+										   <div class="margin_right videoLinks"><a class="videos fancybox.iframe" href="http://www.youtube.com/embed/GIDeKBljLvE?autoplay=1"><p style="background-repeat:no-repeat; width:244px; height:127px; background-position:center;
+										   background-image: url(images/videos/pascual-cuencio.jpg);"><img alt="" src="images/videoFrame.png"></p></a><p class="videoText">
+										   Testimonio del Guerrillero Pascual Cuencio</p></div>
+
+
+										   <div class="margin_right videoLinks"><a class="videos fancybox.iframe" href="http://www.youtube.com/embed/VxiZZ8zHcag?autoplay=1"><p style="background-repeat:no-repeat; width:244px; height:127px; background-position:center;
+										   background-image: url(images/videos/francsico-talavera.jpg);"><img alt="" src="images/videoFrame.png"></p></a><p class="videoText">
+										   Testimonio del Guerrillero Francsico Talavera</p></div>
+
+
+										   <div class="videoLinks"><a class="videos fancybox.iframe" href="http://www.youtube.com/embed/igYViTuWWCQ?autoplay=1"><p style="background-repeat:no-repeat; width:244px; height:127px; background-position:center;
+										   background-image: url(images/videos/amado-rodriguez.jpg);"><img alt="" src="images/videoFrame.png"></p></a><p class="videoText">
+										   Testimonio del Guerrillero Amado Rodr&#237;guez</p></div>
+
+										   <div class="margin_right videoLinks"><a class="videos fancybox.iframe" href="http://www.youtube.com/embed/BktR3U8ieC4?autoplay=1"><p style="background-repeat:no-repeat; width:244px; height:127px; background-position:center;
+										   background-image: url(images/videos/LuisCrespoP1.jpg);"><img alt="" src="images/videoFrame.png"></p></a><p class="videoText">
+										   Luis Cepero combatiente del Escambray Parte 1</p></div>
+
+										   <div class="margin_right videoLinks"><a class="videos fancybox.iframe" href="http://www.youtube.com/embed/S4_ELynEpms?autoplay=1"><p style="background-repeat:no-repeat; width:244px; height:127px; background-position:center;
+										   background-image: url(images/videos/luis-crespo-p2.jpg);"><img alt="" src="images/videoFrame.png"></p></a><p class="videoText">
+										   Luis Cepero combatiente del Escambray Parte 2</p></div>
+
+										   </div>
+
+										</div>
+                                    <!----end Video Section--->
+
+
+									<!----start Video Section--->
+										<h3><a href="#">50 aniversario del inicio de la lucha guerrillera contra el totalitarismo<span class='expand_but expand_text2'>>> pulsar para ver videos</span></a></h3>
+										<div>
+
+                                          <div class="videoSec">
+
+										   <div class="margin_center videoLinks"><a class="videos fancybox.iframe" href="http://www.youtube.com/embed/HDPwCdvUueM?autoplay=1"><p style="background-repeat:no-repeat; width:244px; height:127px; background-position:center;
+										   background-image: url(images/videos/enrique-encinosa.jpg);"><img alt="" src="images/videoFrame.png"></p></a><p class="videoText">
+										   El escritor, periodista e historiador Enrique Encinosa habla en el 50 aniversario del inicio de la lucha guerrillera contra el totalitarismo</p></div>
+
+										   </div>
+
+										</div>
+                                      <!----end Video Section--->
+
+
+									<!----start Video Section--->
+										<h3><a href="#">Pueblos Cautivos<span class='expand_but expand_text2'>>> pulsar para ver videos</span></a></h3>
+										<div>
+
+                                          <div class="videoSec">
+
+										   <div class="margin_right videoLinks"><a class="videos fancybox.iframe" href="http://www.youtube.com/embed/V0M_EVOt5pM?autoplay=1"><p style="background-repeat:no-repeat; width:244px; height:127px; background-position:center;
+										   background-image: url(images/videos/documental-pueblos-c.jpg);"><img alt="" src="images/videoFrame.png"></p></a><p class="videoText">
+										   Algunas entrevistas hechas para el documental "Los Desplazados y Dueblos Cautivos de Cuba"</p></div>
+
+										   <div class="margin_right videoLinks"><a class="videos fancybox.iframe" href="http://www.youtube.com/embed/DbwftaigVBs?autoplay=1"><p style="background-repeat:no-repeat; width:244px; height:127px; background-position:center;
+										   background-image: url(images/videos/pueblos-cautivos-tv1.jpg);"><img alt="" src="images/videoFrame.png"></p></a><p class="videoText">
+										   Programa de televisi&#243;n secretamente grabado en Cuba sobre los pueblos cautivos: Parte 1</p></div>
+
+										   <div class="videoLinks"><a class="videos fancybox.iframe" href="http://www.youtube.com/embed/4f_IbHcUa44?autoplay=1"><p style="background-repeat:no-repeat; width:244px; height:127px; background-position:center;
+										   background-image: url(images/videos/pueblos-cautivos-tv2.jpg);"><img alt="" src="images/videoFrame.png"></p></a><p class="videoText">
+										   Programa de televisi&#243;n secretamente grabado en Cuba sobre los pueblos cautivos: Parte 2</p></div>
+
+
+
+										   </div>
+
+										</div>
+                                   <!----end Video Section--->
+
+
+									<!----start Video Section--->
+										<h3><a href="#">Presentaci&#243;n de libros sobre la lucha del Escambray y los pueblos cautivos<span class='expand_but expand_text2'>>> pulsar para ver videos</span></a></h3>
+										<div>
+
+                                          <div class="videoSec">
+
+										   <div class="margin_center videoLinks"><a class="videos fancybox.iframe" href="http://www.youtube.com/embed/P17Nz2Kjuoc?autoplay=1"><p style="background-repeat:no-repeat; width:244px; height:127px; background-position:center;
+										   background-image: url(images/videos/libro-puebloscautivos.jpg);"><img alt="" src="images/videoFrame.png"></p></a><p class="videoText">
+										   Presentaci&#243;n del Libro "CUBA: Desplazados y pueblos cautivos"</p></div>
+
+										   </div>
+
+										</div>
+                                   <!----end Video Section--->
+
+									</div><!----END Accordion--->
+
+								</div>
+							  </div>
+							</div>
+						  </div>
+
+					  </div>
+					  <p class="slide3" class='panel'><a href="#" class="btn-slide3">Videos</a></p>
+              <!-- End Video content -->
+
+
+            <!----START Documentals content--->
+					  <div id="panel4" class='panel'>
+
+						   <div class="box3">
+							<div class="row-1">
+							  <div class="inner">
+								<div class="wrapper">
+								<h2><strong>Documentales<span>sobre la lucha de las guerrillas anticomunistas en Cuba</span></strong></h2>
+								 <p class="line2"></p>
+
+ 		                         <article class="books-main">
+		                          <p class="booktitle">Porfirio: M&#225;rtires Del Escambray</p><p class="author">Pedro Corzo</p>
+		                           <div id="books" class="floatleft cover">
+		                     		<a class="fancybox-effects-c" href="images/documentals/big/porfirioMartiresDelEscambray.jpg"
+		                     		title="El 12 de octubre de 1960 fueron fusilados por el r&#233;gimen castrista Porfirio Ram&#237;rez Ruiz, presidente de la Federaci&#243;n Estudiantil Universitaria de Las Villas. el comandante Plinio Prieto, el capit&#225;n Sinesio Walsh Rios, &#193;ngel Rodr&#237;guez del Sol y Jose Palomino Colon. Este documental cubre los detalles del asesinato.">
+		                     		<img src="images/documentals/small/porfirioMartiresDelEscambray.jpg" alt="" /></a>
+
+                                  <br/>
+                                 <a class="btn4 fancybox-effects-c" href="images/documentals/big/porfirioMartiresDelEscambray.jpg" title="El 12 de octubre de 1960 fueron fusilados por el r&#233;gimen castrista Porfirio Ram&#237;rez Ruiz, presidente de la Federaci&#243;n Estudiantil Universitaria de Las Villas. el comandante Plinio Prieto, el capit&#225;n Sinesio Walsh Rios, &#193;ngel Rodr&#237;guez del Sol y Jose Palomino Colon. Este documental cubre los detalles del asesinato.">Agrandar Imagen</a>
+		                        <br/>
+							    <br/>
+                                <a class="btn4 videos fancybox.iframe" href="http://www.youtube.com/embed/P17Nz2Kjuoc?autoplay=1">Ver presentaci&#243;n</a>
+
+		                       </div>
+		                       <div class="overflow">
+		                       <p>El 12 de octubre de 1960 fueron fusilados por el r&#233;gimen castrista Porfirio Ram&#237;rez Ruiz, presidente de la Federaci&#243;n Estudiantil
+		                       Universitaria de Las Villas. el comandante Plinio Prieto, el capit&#225;n Sinesio Walsh Rios, &#193;ngel Rodr&#237;guez del Sol y Jose Palomino Colon.
+		                       Este documental cubre los detalles del asesinato.</p>
+		                       <div id="books"><a href="#" class="librodigital"><small>Obtener Documental</small></a></div>
+		                     </div>
+		                   </article>
+
+							</div>
+						  </div>
+						</div>
+					  </div>
+
+				  </div>
+                  <p class="slide4"><a href="#" class="btn-slide4">Documentales</a></p>
+              <!-- End Documentals content -->
+
+                </article>
+               </div>
+            </div>
+          </div>
+
+
+          <div class="box">
+            <div class="row-1">
+              <div class="inner">
+                <div class="wrapper">
+                       <article class="col-1">
+                    <h2>Perico<span>Pedro S&#225;nchez Gonz&#225;lez</span></h2>
+                    <div><a class="various fancybox.iframe" href="perico.html"><img src="images/profiles/1page-img16.jpg" class="fleft" alt="" /></a>
+                      <p>Valiente jefe guerrillero, perdio dos de sus hijos en combate y murio luchando contra el comunismo.</p>
+                    </div>
+                    <p><a class="btn2 various fancybox.iframe" href="perico.html">leer mas</a></p>
+                  </article>
+                  <article class="col-2">
+                    <h2>Cheito<span>Jos&#233; Le&#243;n Jim&#233;nez</span></h2>
+                    <div><a class="various fancybox.iframe" href="cheito.html"><img src="images/profiles/1page-img17.jpg" class="fleft" alt="campitos" /></a>
+                      <p>Ultimo comandante en jefe del Escambray. Murio a los 26 a&#241;os.</p>
+                    </div>
+                    <p><a class="btn2 various fancybox.iframe" href="cheito.html">leer mas</a></p>
+                  </article>
+                  <article class="col-3">
+                    <h2>Maro<span>Borges</span></h2>
+                    <div><a class="various fancybox.iframe" href="maro.html"><img src="images/profiles/1page-img18.jpg" class="fleft" alt="" /></a>
+                      <p>Con apenas 20 a&#241;os de edad, ya dirig&#237;a una guerrilla de hombres mayores que &#233;l.</p>
+                    </div>
+                    <p><a class="btn2 various fancybox.iframe" href="maro.html">leer mas</a></p>
+                  </article>
+  		          <p class="line1"></p>
+                    <p><a class="btn1 various fancybox.iframe" href="combatientes.html">Mostrar Mas Combatientes</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <aside>
+        </aside>
+
+
+        <!-- footer -->
+        <footer>
+          <div class="inner">
+            <div class="wrapper"> <strong>
+              <!-- {%FOOTER_LINK} -->
+              </strong>
+              <p>alexcreative &copy; 2012</p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
